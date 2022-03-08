@@ -2,11 +2,12 @@
   <div id="container">
     <div id="header">
       <img
-        v-on:click="toggleCart()"
+        v-on:click="toggleCart"
         v-if="checkoutButtonShown"
         id="checkoutButton"
         src="https://wad-cw2.herokuapp.com/images/checkout-icon.png"
       />
+      <span v-if="checkoutButtonShown">{{this.cart.length}}</span>
     </div>
     <div id="search-container">
       <input type="text" v-model="searchString" v-on:keyup="searchFn()" placeholder="Search..." />
@@ -112,6 +113,7 @@ export default {
 
       //show the checkout button
       this.checkoutButtonShown = true
+      console.log(this.cart)
     },
     removeFromCart: function f(lesson) {
       this.lessons.forEach(l => {
