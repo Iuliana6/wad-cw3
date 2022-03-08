@@ -1,6 +1,6 @@
 <template>
-  <ul id="lesson-list" class="lesson-container" v-if="lessonListShown">
-      <li v-for="lesson in sortedLessons" v-bind:key="lesson.subject">
+  <ul id="lesson-list" class="lesson-container">
+      <li v-for="lesson in this.sortedLessons" v-bind:key="lesson.subject">
         <div>
           <p>Subject: {{ lesson.subject }}</p>
           <p>Location: {{ lesson.location }}</p>
@@ -16,7 +16,10 @@
 export default {
   name: 'LessonComponent',
   props: {
-    cart: Object,
+    sortedLessons: Object
   },
+  mounted:function(){
+    console.log("Sorted lessons",this.sortedLessons)
+  }
 }
 </script>

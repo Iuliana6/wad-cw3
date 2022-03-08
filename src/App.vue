@@ -24,7 +24,7 @@
         <option v-for="order in sortingOrder" v-bind:value="order" v-bind:key="order">{{ order }}</option>
       </select>
     </div>
-    <LessonComponent></LessonComponent>
+    <LessonComponent v-bind:sortedLessons="this.sortedLessons" v-if="lessonListShown"></LessonComponent>
     <CheckoutComponent v-if="cartShown" v-bind:apiUrl="this.apiUrl" v-bind:cart="this.cart"
     v-on:removeFromCart="removeFromCart" v-on:checkout="checkout"></CheckoutComponent>
   </div>

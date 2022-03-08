@@ -23,9 +23,6 @@
 
 <script>
 export default {
-  name: 'CheckoutComponent',
-  props: {
-    cart: Object,
-  },
+  name: 'CheckoutComponent'
 }
 </script>
