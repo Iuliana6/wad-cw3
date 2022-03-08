@@ -18,8 +18,5 @@ export default {
   props: {
     sortedLessons: Object
   },
-  mounted:function(){
-    console.log("Sorted lessons",this.sortedLessons)
-  }
 }
 </script>
