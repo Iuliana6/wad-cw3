@@ -6,7 +6,7 @@
           <p>Location: {{ lesson.location }}</p>
           <p>Price: £{{ lesson.price }}</p>
           <p>Spaces: {{ lesson.space }}</p>
-          <button v-on:click="addToCart(lesson)">Add to cart</button>
+          <button v-on:click="$emit('addToCart',lesson)">Add to cart</button>
         </div>
         <img class="lesson-image" :src="'https://wad-cw2.herokuapp.com/' + lesson.imageURL" alt />
       </li>
