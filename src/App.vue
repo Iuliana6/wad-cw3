@@ -7,7 +7,7 @@
         id="checkoutButton"
         src="https://wad-cw2.herokuapp.com/images/checkout-icon.png"
       />
-      <span v-if="checkoutButtonShown">{{this.cart.length}}</span>
+      <span v-if="checkoutButtonShown">{{this.cart.map(c=>c.quantity).reduce((a,b)=>a+b)}}</span>
     </div>
     <div id="search-container">
       <input type="text" v-model="searchString" v-on:keyup="searchFn()" placeholder="Search..." />
