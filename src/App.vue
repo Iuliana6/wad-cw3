@@ -36,6 +36,7 @@
         <img class="lesson-image" :src="'https://wad-cw2.herokuapp.com/' + lesson.imageURL" alt />
       </li>
     </ul>
+    <LessonComponent></LessonComponent>
     <CheckoutComponent v-if="cartShown" v-bind:apiUrl="this.apiUrl" v-bind:cart="this.cart"
     v-on:removeFromCart="removeFromCart" v-on:checkout="checkout"></CheckoutComponent>
   </div>
@@ -43,11 +44,13 @@
 
 <script>
 import CheckoutComponent from './components/CheckoutComponent.vue'
+import LessonComponent from './components/LessonComponent.vue'
 const apiUrl = "https://wad-cw2.herokuapp.com"
 export default {
   name: 'App',
   components: {
-    CheckoutComponent
+    CheckoutComponent,
+    LessonComponent
   },
   data: () => {
     return {
